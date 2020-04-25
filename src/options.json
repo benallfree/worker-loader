@@ -7,6 +7,9 @@
     "inline": {
       "type": "boolean"
     },
+    "stringify": {
+      "type": "boolean"
+    },
     "fallback": {
       "type": "boolean"
     },

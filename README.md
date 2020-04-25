@@ -13,6 +13,7 @@
   <p>This loader registers the script as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">Web Worker</a><p>
 </div>
 
+# NOTE: Talk to Ben if you need to make updates to this package. You cannot `npm link` it for development, it will fail in multiple mysterious ways. You must use [wml](https://github.com/wix/wml).
 
 <h2 align="center">Install</h2>
 

@@ -22,6 +22,7 @@ export default function loader() {}
 
 export function pitch(request) {
   const options = loaderUtils.getOptions(this) || {};
+  console.log({ options }, this.resource, this.resourceQuery);
 
   validateOptions(schema, options, 'Worker Loader');
 
@@ -96,6 +97,13 @@ export function pitch(request) {
 
       if (options.fallback === false) {
         delete this._compilation.assets[worker.file];
+      }
+
+      if (options.stringify) {
+        return cb(
+          null,
+          `module.exports = ${JSON.stringify(`${worker.factory}`)};`
+        );
       }
 
       return cb(null, `module.exports = function() {\n  return ${worker.factory};\n};`);
